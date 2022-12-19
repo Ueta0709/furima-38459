@@ -47,7 +47,7 @@ has_one :purchase_history
 
 |Column        |Type      |Options                       |
 |--------------|----------|------------------------------|
-|items         |references|null: false, foreign_key: true|
+|item          |references|null: false, foreign_key: true|
 |user          |references|null: false, foreign_key: true|
 
 
@@ -55,7 +55,7 @@ has_one :purchase_history
 
 belongs_to :user
 belongs_to :item
-belongs_to :shopping_address
+has_one :shopping_address
 
 ----------------------------------------------------------
 
@@ -69,9 +69,9 @@ belongs_to :shopping_address
 |address_line      |string    |null: false                   |
 |address_line_sub  |          |null: false                   |
 |phon_number       |string    |null: false                   |
-|purchase_histories|references|null: false, foreign_key: true|
+|purchase_history  |references|null: false, foreign_key: true|
 
 
 ### Association
 
-has_one :purchase_history
+belongs_to :purchase_histories
