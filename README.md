@@ -67,7 +67,7 @@ has_one :shopping_address
 |shipping_area_id  |integer   |null: false                   |
 |city              |string    |null: false                   |
 |address_line      |string    |null: false                   |
-|address_line_sub  |string    |null: false                   |
+|address_line_sub  |string    |                              |
 |phon_number       |string    |null: false                   |
 |purchase_history  |references|null: false, foreign_key: true|
 
