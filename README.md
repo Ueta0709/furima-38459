@@ -67,11 +67,11 @@ has_one :shopping_address
 |shipping_area_id  |integer   |null: false                   |
 |city              |string    |null: false                   |
 |address_line      |string    |null: false                   |
-|address_line_sub  |          |null: false                   |
+|address_line_sub  |string    |null: false                   |
 |phon_number       |string    |null: false                   |
 |purchase_history  |references|null: false, foreign_key: true|
 
 
 ### Association
 
-belongs_to :purchase_histories
+belongs_to :purchase_history
