@@ -61,4 +61,4 @@ group :production do
   gem 'pg'
 end
 
-gem 'device'
+gem 'devise'
