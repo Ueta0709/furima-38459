@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
       @user.password = '000000'
       @user.password_confirmation = '000000'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Password is too ')
+      expect(@user.errors.full_messages).to include('Password is invalid')
     end
 
     it '重複したemailが存在する場合は登録できない' do
@@ -83,7 +83,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name kana can't be blank")
     end
 
-    it 'last_name_kanaが空では登録できない' do@user.password = ''
+    it 'last_name_kanaが空では登録できない' do
       @user.last_name_kana = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Last name kana can't be blank")
