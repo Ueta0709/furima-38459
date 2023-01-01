@@ -1,6 +1,7 @@
 <%= render "shared/second-header"%>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'registration-main') do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
