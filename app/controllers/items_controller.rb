@@ -21,7 +21,7 @@ def create
   private
 
   def item_params
-    params.require(:item).permit(:title,:text,:image,:category_id,:condition_id, :shipping_fee_id, :shipping_area_id, :shipping_period_id, :price)
+    params.require(:item).permit(:title,:text,:image,:category_id,:condition_id, :shipping_fee_id, :shipping_area_id, :shipping_period_id, :price, :user_id)
   end
 
 end
