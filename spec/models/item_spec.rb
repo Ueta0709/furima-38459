@@ -8,6 +8,10 @@ RSpec.describe Item, type: :model do
 
   describe '商品出品' do
 
+    context 'ユーザ登録ができる時' do
+      
+    end
+
 
     context '出品ができない時' do
 

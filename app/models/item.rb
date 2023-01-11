@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   
   validates :title, :text, :image, presence: true
-  validates :price, presence: true, numericality: { greater_than: 299, less_than: 10000000 }, format: { with: /\A[0-9]+\z/i}
+  validates :price, presence: true, numericality: { greater_than: 299, less_than: 10000000, only_integer: true }
   
   validates :category_id,:condition_id, :shipping_area_id, :shipping_fee_id, :shipping_period_id, numericality: { other_than: 1 , message: "can't be blank"}
 end
