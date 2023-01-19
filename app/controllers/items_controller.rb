@@ -43,8 +43,7 @@ def item_params
 end
 
 def edit_move_to_index
-  @item_id = Item.find(params[:id])
-  unless current_user.id == @item_id.user_id 
+  unless current_user.id == @item.user_id 
     redirect_to action: :index
   end
 end
