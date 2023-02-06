@@ -21,7 +21,9 @@ def create
 end
 
 def show
-  
+  if @item.purchase_history.present? && current_user.id == @item.user_id
+    redirect_to root_path
+   end
 end
 
 def edit
