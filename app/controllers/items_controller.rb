@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show, :update, :destroy]
+  before_action :set_item, only: [:update, :destroy]
+  before_action :set_item_other, only: [:edit, :show]
   before_action :authenticate_user!, except: [:index,:show]
   before_action :edit_move_to_index, only: [:edit]
 
@@ -21,9 +22,7 @@ def create
 end
 
 def show
-  if @item.purchase_history.present? && current_user.id == @item.user_id
-    redirect_to root_path
-   end
+  
 end
 
 def edit
@@ -59,6 +58,13 @@ end
 
 def set_item
   @item = Item.find(params[:id])
+end
+
+def set_item_other
+  @item = Item.find(params[:id])
+  if @item.purchase_history.present? && current_user.id == @item.user_id
+    redirect_to root_path
+  end
 end
 
 end

@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, only: [:index]
 
   def index
     @item = Item.find(params[:item_id])
     @purchase_history_shopping_adress = PurchaseHistoryShoppingAdress.new
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id || @item.purchase_history.present?
       redirect_to root_path 
     end
   end

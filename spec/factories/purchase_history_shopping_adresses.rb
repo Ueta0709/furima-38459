@@ -1,5 +1,6 @@
 FactoryBot.define do
-  factory :shopping_address do
+  factory :purchase_history_shopping_adress do
+    token {"tok_abcdefghijk00000000000000000"}
     post_code { '000-0000' }
     city { 'sample' }
     address_line { 'sample' }
