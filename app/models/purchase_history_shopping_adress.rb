@@ -4,7 +4,7 @@ class PurchaseHistoryShoppingAdress
 
   with_options presence: true do
     validates :post_code, format: {with: /\A\d{3}[-]\d{4}\z/}
-    validates :shipping_area_id, :city, :address_line
+    validates :shipping_area_id, :city, :address_line, :token
     validates :phon_number, length: { in: 10..11 }, format: {with: /\A[0-9]+\z/i}
   end
 
