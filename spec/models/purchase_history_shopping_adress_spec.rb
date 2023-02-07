@@ -14,6 +14,12 @@ RSpec.describe PurchaseHistoryShoppingAdress, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@purchase_history_shopping_adress).to be_valid
       end
+
+      it '建物名の入力がなくても保存できること' do
+        @purchase_history_shopping_adress.address_line_sub = ''
+        expect(@purchase_history_shopping_adress).to be_valid
+      end
+
     end
 
     context '内容に問題がある場合' do
