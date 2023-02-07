@@ -62,7 +62,7 @@ end
 
 def set_item_other
   @item = Item.find(params[:id])
-  if @item.purchase_history.present? && current_user.id == @item.user_id
+  if @item.purchase_history.present? || current_user.id == @item.user_id
     redirect_to root_path
   end
 end

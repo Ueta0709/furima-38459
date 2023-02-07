@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ShoppingAddress, type: :model do
-  describe '購入機能' do
+ 
     before do
       @shopping_address = FactoryBot.build(:shopping_address)
     end
