@@ -4,8 +4,9 @@ class PurchaseHistoryShoppingAdress
 
   with_options presence: true do
     validates :post_code, format: {with: /\A\d{3}[-]\d{4}\z/}
-    validates :shipping_area_id, :city, :address_line, :token, :shipping_area_id
+    validates :shipping_area_id, :city, :address_line, :token, :user_id, :item_id
     validates :phon_number, length: { in: 10..11 }, format: {with: /\A[0-9]+\z/i}
+    validates :shipping_area_id, numericality: { other_than: 1 , message: "can't be blank"}
   end
 
   def save

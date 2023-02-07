@@ -73,19 +73,19 @@ RSpec.describe PurchaseHistoryShoppingAdress, type: :model do
       it "itemが紐付いていなければ購入できないこと" do
         @purchase_history_shopping_adress.item_id = ''
         @purchase_history_shopping_adress.valid?
-        expect(@purchase_history_shopping_adress.errors.full_messages).to include("")
+        expect(@purchase_history_shopping_adress.errors.full_messages).to include("Item can't be blank")
       end
 
       it "userが紐付いていなければ購入できない" do
         @purchase_history_shopping_adress.user_id = ''
         @purchase_history_shopping_adress.valid?
-        expect(@purchase_history_shopping_adress.errors.full_messages).to include("")
+        expect(@purchase_history_shopping_adress.errors.full_messages).to include("User can't be blank")
       end
 
       it "都道府県に「---」が選択されている場合は購入できないこと" do
         @purchase_history_shopping_adress.shipping_area_id = '1'
         @purchase_history_shopping_adress.valid?
-        expect(@purchase_history_shopping_adress.errors.full_messages).to include("")
+        expect(@purchase_history_shopping_adress.errors.full_messages).to include("Shipping area can't be blank")
       end
 
     end
