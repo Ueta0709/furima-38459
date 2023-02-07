@@ -7,7 +7,5 @@ FactoryBot.define do
     address_line_sub { 'sample' }
     phon_number { '0000000000' }
     shipping_area_id {'2'}
-    item_id{'1'}
-    user_id{'1'}
   end
 end
