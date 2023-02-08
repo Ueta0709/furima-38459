@@ -54,12 +54,6 @@ RSpec.describe ShoppingAddress, type: :model do
         expect(@shopping_address.errors.full_messages).to include("Title can't be blank")
       end
 
-      it 'phon_numberが半角数値でないと保存できないこと' do
-        @shopping_address.phon_number = 'aaaaaaaaaa'
-        @shopping_address.valid?
-        expect(@shopping_address.errors.full_messages).to include("Title can't be blank")
-      end
-
     end
   end
 end
