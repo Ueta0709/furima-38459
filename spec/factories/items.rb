@@ -12,7 +12,7 @@ FactoryBot.define do
     shipping_period_id          {'2'}
 
     after(:build) do |item|
-      item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+      item.image.attach(io: File.open('public/test_image.png'), filename: 'test_image.png')
     end
 
   end
