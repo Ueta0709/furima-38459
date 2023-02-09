@@ -1,6 +1,6 @@
 class PurchaseHistoryShoppingAdress
   include ActiveModel::Model
-  attr_accessor :post_code, :shipping_area_id, :city, :address_line, :address_line_sub, :phon_number, :item_id, :user_id, :token
+  attr_accessor :post_code, :shipping_area_id, :city, :address_line, :address_line_sub, :phon_number, :item_id, :user_id, :token, :purchase_history_id
 
   with_options presence: true do
     validates :post_code, format: {with: /\A\d{3}[-]\d{4}\z/}
