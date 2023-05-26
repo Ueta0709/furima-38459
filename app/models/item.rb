@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :shipping_period
   has_one_attached :image
-  ＃重要
   
   validates :title, :text, :image, presence: true
   validates :price, presence: true, numericality: { greater_than: 299, less_than: 10000000, only_integer: true }
