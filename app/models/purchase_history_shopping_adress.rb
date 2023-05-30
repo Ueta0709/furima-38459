@@ -12,7 +12,6 @@ class PurchaseHistoryShoppingAdress
   def save
     purchase_history = PurchaseHistory.create(item_id: item_id, user_id: user_id)
     ShoppingAddress.create(post_code: post_code, shipping_area_id: shipping_area_id, city: city, address_line: address_line, address_line_sub: address_line_sub, phon_number: phon_number, purchase_history_id: purchase_history.id)
-    #重要
   end
 
 end
